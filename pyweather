@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+
+import requests, time, sys
+
+def weather(numdays, city):
+        """
+        Sort through the weather data fetched from 'openweathermap'
+        """
+
+        url = 'http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+'&mode$
+        r = requests.get(url)
+        rawweather = r.json()
+
+        date = int(time.strftime("%d"))
+        month = time.strftime("%m")
+
+        for i in range (0,int(numdays)):
+                print (str(date+i+1) + "/" + month + ":", "%02d" % ((rawweather['lis$
+try:
+        weather(sys.argv[1], sys.argv[2])
+except:
+        print ("""An error has occured, useage is as follows:
+
+        pyweather <days to forecast> <location>
+
+If that doesn't work, the openweather.org api may be down.""")
