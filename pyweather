@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# Created and maintained by Michael Smith (2014)
+# And licensed under the MIT license (see LICENSE) 
+
 import requests, time, sys
 
 def weather(numdays, city):
